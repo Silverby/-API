@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=2, user-scalable=no, width=device-width">
+    <title>搜索</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .basic-bg-body {
+            background-color: #f8f8f8;
+        }
+        
+        .list-group {
+            margin: 15px 0 5px 0;
+        }
+        
+        .com-lr {
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+        
+        .com-60p {
+            width: 60px;
+            display: inline-block;
+        }
+        
+        .com-pn {
+            padding: 0;
+        }
+        
+        .com-input-bn {
+            border: none;
+            box-shadow: none;
+        }
+        
+        .com-pt-sm {
+            padding-top: 10px;
+        }
+        
+        .com-pb-sm {
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body class="basic-bg-body">
+
+    <div class="container-fluid">
+        <ul class="list-group">
+            <li class="list-group-item form-group">
+                <span class="com-lr com-60p">关键字：</span>
+                <input type="text" id="addressKey" name="addressKey" class="com-input-bn" placeholder="请输入搜索地点">
+            </li>
+        </ul>
+        <div class="col-sm-12 col-xs-12 com-pn">
+            <button id="submit" type="submit" class="btn btn-warning btn-block com-pt-sm com-pb-sm">搜索</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/template.js"></script>
+
+    <script>
+        $(function () {
+            $("#submit").click(function () {
+                var addressKey = $("#addressKey").val();
+                localStorage.setItem("addressKey", { addressKey: $("#addressKey").val() });
+                history.back();
+            });
+        })
+    </script>
+
+</body>
+
+</html>
